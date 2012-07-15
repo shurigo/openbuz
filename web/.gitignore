@@ -13,3 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# secure credentials
+/config/aws.yml
+config/initializers/secret_token.rb
