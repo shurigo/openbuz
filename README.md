@@ -1,2 +1,3 @@
-openbuz
-=======
+# OpenBuz pilot project
+
+Under construction...
