@@ -48,4 +48,10 @@ group :test do
   gem 'webrat'
 end
 
+# OmniAuth
 gem 'omniauth'
+gem 'omniauth-openid'
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
+gem 'omniauth-twitter'
+
