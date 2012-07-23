@@ -11,7 +11,7 @@ development:
   encoding: utf8
   username: ob_owner
   password: 0BowN3r!
-  host: pilot.cp3c5t5r4c0o.us-east-1.rds.amazonaws.com
+  host: localhost #pilot.cp3c5t5r4c0o.us-east-1.rds.amazonaws.com
   port: 3306
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

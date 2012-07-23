@@ -27,6 +27,7 @@
 /config/config.yml
 /config/database.yml
 /config/initializers/secret_token.rb
+/config/environments/development.rb
 /coverage.data
 /coverage/
 /db/*.javadb/

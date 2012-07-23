@@ -1,5 +1,4 @@
 Web::Application.routes.draw do
-  resources :users
 
   get "home/index"
 
@@ -59,4 +58,33 @@ Web::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  ####
+  #
+  #
+  
+  # Omniauth pure
+  match "/signin" => "services#signin"
+  match "/signout" => "services#signout"
+  
+  match '/auth/:service/callback' => 'services#create' 
+  match '/auth/failure' => 'services#failure'
+  
+  resources :services, :only => [:index, :create, :destroy] do
+    collection do
+      get 'signin'
+      get 'signout'
+      get 'signup'
+      post 'newaccount'
+      get 'failure'
+    end
+  end
+ 
+  # used for the demo application only
+  resources :users, :only => [:index] do
+    collection do
+      get 'test'
+    end
+  end
+  root :to => "users#index"
+
 end
