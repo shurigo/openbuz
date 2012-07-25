@@ -85,6 +85,7 @@ Web::Application.routes.draw do
       get 'test'
     end
   end
+  
   root :to => "users#index"
 
 end

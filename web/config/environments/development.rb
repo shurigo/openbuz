@@ -40,10 +40,14 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   # ALWAYS RESTART YOUR SERVER IF YOU MAKE CHANGES TO THESE SETTINGS!
   #    
   # you need a store for OpenID; (if you deploy on heroku you need Filesystem.new('./tmp') instead of Filesystem.new('/tmp'))
-  # require 'openid/store/filesystem'
-  #             
+  require 'openid/store/filesystem'
+               
+  # load certificates
+  require 'openid/fetchers'
+  OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
+  
   # providers with id/secret, you need to sign up for their services (see below) and enter the parameters here
-  provider :facebook, 'openbuz', '9ac728077a53381dc6d07eb515198eed'
+  provider :facebook, '132494480225073', '9ac728077a53381dc6d07eb515198eed'
   # provider :twitter, 'CONSUMER_KEY', 'CONSUMER_SECRET'
   # provider :github, 'CLIENT ID', 'SECRET'
   # 
