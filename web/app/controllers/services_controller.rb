@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
   before_filter :authenticate_user!, :except => [:create, :signin, :signup, :newaccount, :failure]
     
-  protect_from_forgery # :except => :create     # see https://github.com/intridea/omniauth/issues/203
+  protect_from_forgery :except => :create     # see https://github.com/intridea/omniauth/issues/203
 # callback: success
 # This handles signing in and adding an authentication service to existing accounts itself
 # It renders a separate view if there is a new user to create

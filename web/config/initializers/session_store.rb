@@ -16,6 +16,5 @@ Web::Application.config.session = {
   :expire_after => 1.month,                     # expire cookie
   :secure       => false,                       # fore https if true
   :httponly     => true,                        # a measure against XSS attacks, prevent client side scripts from accessing the cookie
-  
   :secret      => '8bfb09358e663e8984e78cdd7160225c16bbafa0bb72a7975c4082353bf640b29bd01e8ff9763bface110a4a640c40b18894fe985480c228724a2fb5bf0a5922'
 }
