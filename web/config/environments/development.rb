@@ -1,1 +1,0 @@
-/home/razorr/Dropbox/OpenBuz/src/config/environments/development.rb
