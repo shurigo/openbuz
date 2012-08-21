@@ -1,5 +1,13 @@
 Web::Application.routes.draw do
 
+  get "pages/search"
+
+  get "pages/view"
+
+  get "pages/apply"
+
+  get "pages/profile"
+
   get "home/index"
 
   # The priority is based upon order of creation:
