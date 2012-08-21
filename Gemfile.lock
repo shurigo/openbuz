@@ -173,6 +173,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk
   coffee-rails (~> 3.2.1)
+  faraday
   jquery-rails
   mysql2
   omniauth

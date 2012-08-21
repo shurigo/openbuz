@@ -1,1 +1,0 @@
-/Users/imacmb325/Dropbox/OpenBuz/src/config/development.rb

@@ -55,3 +55,4 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem 'omniauth-twitter'
 
+gem 'faraday'
