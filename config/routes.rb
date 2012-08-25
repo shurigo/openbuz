@@ -95,5 +95,7 @@ Web::Application.routes.draw do
   end
   
   root :to => "users#index"
-
+  
+  # Pages shortcuts
+  match "apply" => "pages#apply"
 end
