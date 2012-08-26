@@ -3,36 +3,16 @@
 <head>
   <title><%= title %></title>
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tag %>
-  <%= render 'layouts/stylesheets' %>
-  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %> 
-  <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
-  <%= stylesheet_link_tag 'stylesheets/custom', :media => 'screen' %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>  
 </head>
 <body>
 
-<section id="head">
-
-    <section id="user">
-        <% if user_signed_in? %>
-            <nav id="nav_user">
-                <ul>
-                    <span><%= current_user.email %></span>
-                    <li><%= link_to "Settings", services_path %>
-                    <li><%= link_to "Sign out", signout_services_path %></li>
-                </ul>
-            </nav>
-        <% else %>
-            <nav id="nav_user">
-                <ul>
-                    <li><%= link_to "Sign In", services_path %></li>
-                </ul>
-            </nav>
-        <% end %>
-    </section>
+<%= render 'layouts/header' %>
 
     <h1>OpenBuz<sup>pilot</sup></h1>
-</section>
 
 <section id="body">
     <section id="flash">
@@ -40,8 +20,9 @@
             <div class="flash <%= key %> round"><%= value %></div>
         <% end %>
     </section>
-
+  <div class="container">
     <%= yield %>
+  </div>
 </section>
 
 <%= render 'layouts/footer' %>

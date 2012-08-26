@@ -57,3 +57,5 @@ gem 'omniauth-vkontakte'
 gem 'omniauth-twitter'
 
 gem 'faraday'
+gem 'gravatar_image_tag'
+gem 'bootstrap-sass'

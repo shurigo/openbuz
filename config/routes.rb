@@ -86,18 +86,20 @@ Web::Application.routes.draw do
       get 'failure'
     end
   end
- 
-  # used for the demo application only
-  resources :users, :only => [:index] do
-    collection do
-      get 'test'
-    end
-  end
   
-  root :to => "users#index"
+  resources :users
+  match '/signup',  :to => 'users#new'
+  # used for the demo application only
+  #resources :users, :only => [:index] do
+  #  collection do
+  #    get 'test'
+  #  end
+  #end
+  
+  #root :to => "users#index"
   
   # Pages shortcuts
   #match "apply" => "pages#apply"
   #get "users/new"
-  #match '/signup',  :to => 'users#new'
+  match '/signup',  :to => 'users#new'
 end
