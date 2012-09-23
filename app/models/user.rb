@@ -11,8 +11,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name_first, :name_last,  :age, :sex, :photo
-  
+  attr_accessible :name, :email, :name_first, :name_last, :age, :gender, :photo  
   has_many :services
   has_one  :contact_details
   has_many :skill
@@ -27,7 +26,7 @@ class User < ActiveRecord::Base
 	    :format => { :with => email_regex },
 	    :uniqueness => { :case_sensitive => false }
   
-  validates :sex, :length=> { :maximum => 1 }
+  validates :gender, :length=> { :maximum => 1 }
   
   before_save { |user| user.email = email.downcase }
 end

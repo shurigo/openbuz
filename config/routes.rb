@@ -101,5 +101,6 @@ Web::Application.routes.draw do
   # Pages shortcuts
   #match "apply" => "pages#apply"
   #get "users/new"
+  get 'users/new'
   match '/signup',  :to => 'users#new'
 end

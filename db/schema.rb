@@ -11,7 +11,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120827194617) do
+ActiveRecord::Schema.define(:version => 20120904214114) do
+
+  create_table "contact_details", :force => true do |t|
+    t.string   "country"
+    t.string   "city"
+    t.string   "address"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "feedbacks", :force => true do |t|
+    t.string   "text"
+    t.integer  "user_id"
+    t.integer  "my_user_id"
+    t.integer  "skill_id"
+    t.decimal  "rating",      :precision => 10, :scale => 0
+    t.integer  "user_rating"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+  end
+
+  add_index "feedbacks", ["user_id"], :name => "user_id"
+
+  create_table "job_requests", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "skill_id"
+    t.datetime "request_at"
+    t.string   "address"
+    t.string   "comment"
+    t.string   "phone"
+    t.decimal  "budget",     :precision => 10, :scale => 0
+    t.string   "status_id"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
 
   create_table "services", :force => true do |t|
     t.integer  "user_id"
@@ -23,12 +57,30 @@ ActiveRecord::Schema.define(:version => 20120827194617) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "skills", :force => true do |t|
+    t.string   "name"
+    t.boolean  "notify"
+    t.string   "address"
+    t.decimal  "price",         :precision => 10, :scale => 0
+    t.string   "price_measure"
+    t.string   "description"
+    t.string   "media"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "password_digest"
+    t.string   "name_first"
+    t.string   "name_last"
+    t.string   "gender"
+    t.integer  "age"
+    t.string   "photo"
+    t.boolean  "available"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.string   "password_digest"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -22,9 +22,6 @@ end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
@@ -40,6 +37,7 @@ gem 'aws-sdk'
 gem 'mysql2'
 
 group :development do
+  gem 'annotate'
   gem 'rspec-rails'
 end
 
@@ -59,3 +57,4 @@ gem 'omniauth-twitter'
 gem 'faraday'
 gem 'gravatar_image_tag'
 gem 'bootstrap-sass'
+gem 'bcrypt-ruby'
