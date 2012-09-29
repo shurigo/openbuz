@@ -67,8 +67,13 @@ describe User do
       user_with_same_email.email = @user.email.upcase
       user_with_same_email.save
     end
+    
     it { should_not be_valid }
   end
-
+  
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
+  end
 end
 
