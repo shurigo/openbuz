@@ -1,7 +1,11 @@
+require 'factory_girl'
 # By using the symbol ':user', we get Factory Girl to simulate the User model.
-#Factory.define :user do |user|
-#  user.name 		     "tester"
-#  user.email                 "tester@example.com"
-#  user.password              "Foobar123"
-#  user.password_confirmation "Foobar123"
-#end
+FactoryGirl.define do 
+  factory :user do
+    name                  "tester"
+    email                 "tester@example.com"
+    gender                "m"
+    password              "Foobar123"
+    password_confirmation "Foobar123"
+  end
+end

@@ -3,16 +3,15 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.string :password_digest
-      t.string :name_first
-      t.string :name_last
+      t.string :password
+      t.string :password_confirmation
       t.string :gender
       t.integer :age
-      t.string :photo
-      t.boolean :available
+      t.string :remember_token
       t.timestamps
     end
     add_index :users, :name, :unique => true
     add_index :users, :email, :unique => true 
+    add_index :users, :remember_token
   end
 end

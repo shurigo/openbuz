@@ -32,8 +32,6 @@ ActiveRecord::Schema.define(:version => 20120904214114) do
     t.datetime "updated_at",                                 :null => false
   end
 
-  add_index "feedbacks", ["user_id"], :name => "user_id"
-
   create_table "job_requests", :force => true do |t|
     t.integer  "user_id"
     t.integer  "skill_id"
@@ -59,31 +57,25 @@ ActiveRecord::Schema.define(:version => 20120904214114) do
 
   create_table "skills", :force => true do |t|
     t.string   "name"
-    t.boolean  "notify"
-    t.string   "address"
-    t.decimal  "price",         :precision => 10, :scale => 0
-    t.string   "price_measure"
     t.string   "description"
-    t.string   "media"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password_digest"
-    t.string   "name_first"
-    t.string   "name_last"
+    t.string   "password"
+    t.string   "password_confirmation"
     t.string   "gender"
     t.integer  "age"
-    t.string   "photo"
-    t.boolean  "available"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "remember_token"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["name"], :name => "index_users_on_name", :unique => true
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end
