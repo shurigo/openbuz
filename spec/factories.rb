@@ -5,6 +5,7 @@ FactoryGirl.define do
     name                  "tester"
     email                 "tester@example.com"
     gender                "m"
+    age                   30
     password              "Foobar123"
     password_confirmation "Foobar123"
   end

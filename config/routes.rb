@@ -88,19 +88,6 @@ Web::Application.routes.draw do
   end
   
   resources :users
-  match '/signup',  :to => 'users#new'
-  # used for the demo application only
-  #resources :users, :only => [:index] do
-  #  collection do
-  #    get 'test'
-  #  end
-  #end
+  match '/signup', :to => 'users#new'
   
-  #root :to => "users#index"
-  
-  # Pages shortcuts
-  #match "apply" => "pages#apply"
-  #get "users/new"
-  get 'users/new'
-  match '/signup',  :to => 'users#new'
 end

@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class ServicesController < ApplicationController
   before_filter :authenticate_user!, :except => [:create, :signin, :signup, :newaccount, :failure]
     
@@ -74,7 +76,7 @@ class ServicesController < ApplicationController
       @newuser.name = session[:authhash][:name]
       @newuser.email = session[:authhash][:email]
       @newuser.services.build(:provider => session[:authhash][:provider], :uid => session[:authhash][:uid], :uname => session[:authhash][:name], :uemail => session[:authhash][:email])
-    
+      @newuser.password=@newuser.password_confirmation=SecureRandom.hex(16) 
       if @newuser.save!
         # signin existing user
         # in the session his user id and the service id used for signing in is stored
