@@ -17,8 +17,7 @@ class UsersController < ApplicationController
   def create
     @usesr = User.new(params[:user])
     if @user.save
-      flash[:success] = 'Welcome to OpenBuz'
-      redirect_to @user 
+      # Success
     else
       render 'new'
     end
