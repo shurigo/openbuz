@@ -12,4 +12,14 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+
+  def create
+    @usesr = User.new(params[:user])
+    if @user.save
+      flash[:success] = 'Welcome to OpenBuz'
+      redirect_to @user 
+    else
+      render 'new'
+    end
+  end
 end
