@@ -38,5 +38,6 @@ RSpec.configure do |config|
 
   # Use named routes in RSpec  
   config.include Rails.application.routes.url_helpers
-
+  
+#  config.render_views
 end
