@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   
   def new
     @title = "Sign Up"
+    @user = User.new
   end
   
   def show
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @usesr = User.new(params[:user])
+    @user = User.new(params[:user])
     if @user.save
       flash[:success] = 'Welcome to OpenBuz'
       redirect_to @user 

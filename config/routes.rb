@@ -8,7 +8,11 @@ Web::Application.routes.draw do
   match '/home', to: 'static_pages#home'
   match '/contact', to: 'static_pages#contact'
 
-  root :to => 'home#index'
+  root :to => 'static_pages#home'
+
+  resources :users
+  match '/signup',  :to => 'users#new'
+  match '/users/:id', :to => 'users#show', :as => :user
 
   # Omniauth pure
   match "/signin" => "services#signin"
@@ -26,15 +30,6 @@ Web::Application.routes.draw do
       get 'failure'
     end
   end
-  
-  resources :users
-  match '/signup',  :to => 'users#new'
-  # used for the demo application only
-  #resources :users, :only => [:index] do
-  #  collection do
-  #    get 'test'
-  #  end
-  #end
   
   get "pages/search"
 

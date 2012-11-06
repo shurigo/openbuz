@@ -43,9 +43,10 @@ end
 
 group :test do
   gem 'rspec'
-  gem 'webrat'
+  #gem 'webrat'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'launchy'
 end
 
 # OmniAuth
