@@ -43,10 +43,11 @@ end
 
 group :test do
   gem 'rspec'
-  #gem 'webrat'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 # OmniAuth
