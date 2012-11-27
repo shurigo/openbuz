@@ -48,6 +48,7 @@ group :test do
   gem 'launchy'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'relish'
 end
 
 # OmniAuth
